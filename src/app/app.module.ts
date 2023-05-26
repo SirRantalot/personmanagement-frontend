@@ -35,6 +35,14 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatInputModule} from '@angular/material/input';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatDatepickerModule} from '@angular/material/datepicker';
+import { AppHeaderComponent } from './components/app-header/app-header.component';
+import { AppLoginComponent } from './components/app-login/app-login.component';
+import { BaseComponent } from './components/base/base.component';
+import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
+import { AutofocusDirective } from './dir/autofocus-dir';
+import { IsInRoleDirective } from './dir/is.in.role.dir';
+import { IsInRolesDirective } from './dir/is.in.roles.dir';
+import { NoAccessComponent } from './pages/no-access/no-access.component';
 
 export const authConfig: AuthConfig = {
   issuer: 'http://localhost:8080/realms/personmanager',
@@ -66,7 +74,15 @@ export function storageFactory(): OAuthStorage {
     CityListComponent,
     CityCreateComponent,
     CountryCreateComponent,
-    CountryListComponent
+    CountryListComponent,
+    IsInRoleDirective,
+    IsInRolesDirective,
+    NoAccessComponent,
+    AppLoginComponent,
+    AppHeaderComponent,
+    AutofocusDirective,
+    BaseComponent,
+    ConfirmDialogComponent
   ],
   imports: [
     BrowserModule,
