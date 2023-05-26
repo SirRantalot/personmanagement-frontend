@@ -13,6 +13,14 @@ import { HttpXSRFInterceptor } from './interceptor/http.csrf.interceptor';
 import { AppAuthService } from './service/app.auth.service';
 import {MatButtonModule} from '@angular/material/button';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { PersonListComponent } from './pages/person-list/person-list.component';
+import { PersonCreateComponent } from './pages/person-create/person-create.component';
+import { ContactDetailsCreateComponent } from './pages/contact-details-create/contact-details-create.component';
+import { ContactDetailsListComponent } from './pages/contact-details-list/contact-details-list.component';
+import { CityListComponent } from './pages/city-list/city-list.component';
+import { CityCreateComponent } from './pages/city-create/city-create.component';
+import { CountryCreateComponent } from './pages/country-create/country-create.component';
+import { CountryListComponent } from './pages/country-list/country-list.component';
 
 export const authConfig: AuthConfig = {
   issuer: 'http://localhost:8080/realms/ILV',
@@ -36,7 +44,15 @@ export function storageFactory(): OAuthStorage {
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardComponent
+    DashboardComponent,
+    PersonListComponent,
+    PersonCreateComponent,
+    ContactDetailsCreateComponent,
+    ContactDetailsListComponent,
+    CityListComponent,
+    CityCreateComponent,
+    CountryCreateComponent,
+    CountryListComponent
   ],
   imports: [
     BrowserModule,
