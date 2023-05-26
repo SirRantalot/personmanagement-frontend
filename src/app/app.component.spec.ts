@@ -1,13 +1,21 @@
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import {AuthConfig, OAuthModule} from 'angular-oauth2-oidc';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
+import {authConfig} from './app.module';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule
+        RouterTestingModule,
+        OAuthModule.forRoot({resourceServer: {sendAccessToken: true}}),
+        HttpClientModule
       ],
+      providers: [
+        //{provide: HttpClient, useValue: createSpyFromClass(HttpClient)},
+        {provide: AuthConfig, useValue: authConfig}],
       declarations: [
         AppComponent
       ],

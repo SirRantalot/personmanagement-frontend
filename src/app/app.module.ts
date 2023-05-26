@@ -12,7 +12,6 @@ import { HTTP_INTERCEPTORS, HttpClientModule, HttpClientXsrfModule } from '@angu
 import { HttpXSRFInterceptor } from './interceptor/http.csrf.interceptor';
 import { AppAuthService } from './service/app.auth.service';
 import {MatButtonModule} from '@angular/material/button';
-import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { PersonListComponent } from './pages/person-list/person-list.component';
 import { PersonCreateComponent } from './pages/person-create/person-create.component';
 import { ContactDetailsCreateComponent } from './pages/contact-details-create/contact-details-create.component';
@@ -21,13 +20,28 @@ import { CityListComponent } from './pages/city-list/city-list.component';
 import { CityCreateComponent } from './pages/city-create/city-create.component';
 import { CountryCreateComponent } from './pages/country-create/country-create.component';
 import { CountryListComponent } from './pages/country-list/country-list.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import {MatSliderModule} from '@angular/material/slider';
+import {MatTableModule} from '@angular/material/table';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatIconModule} from '@angular/material/icon';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatCardModule} from '@angular/material/card';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatSelectModule} from '@angular/material/select';
+import {MatInputModule} from '@angular/material/input';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {MatDatepickerModule} from '@angular/material/datepicker';
 
 export const authConfig: AuthConfig = {
-  issuer: 'http://localhost:8080/realms/ILV',
+  issuer: 'http://localhost:8080/realms/personmanager',
   requireHttps: false,
   redirectUri: environment.frontendBaseUrl,
   postLogoutRedirectUri: environment.frontendBaseUrl,
-  clientId: 'demoapp',
+  clientId: 'personmanager',
   scope: 'openid profile roles offline_access',
   responseType: 'code',
   showDebugInformation: true,
@@ -58,13 +72,28 @@ export function storageFactory(): OAuthStorage {
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     HttpClientXsrfModule.withOptions({
       cookieName: 'XSRF-TOKEN',
       headerName: 'X-XSRF-TOKEN'
     }),
+    MatSliderModule,
+    MatTableModule,
     OAuthModule.forRoot({resourceServer: {sendAccessToken: true}}),
-    HttpClientModule,
-    MatButtonModule
+    MatButtonModule,
+    MatPaginatorModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatToolbarModule,
+    MatCardModule,
+    MatDialogModule,
+    MatSnackBarModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatInputModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatDatepickerModule
   ],
   providers: [
     {provide: AuthConfig, useValue: authConfig},
@@ -79,5 +108,6 @@ export function storageFactory(): OAuthStorage {
 })
 export class AppModule {
   constructor(authService: AppAuthService) {
-  authService.initAuth().finally();
-} }
+    authService.initAuth().finally();
+  }
+}
