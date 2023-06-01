@@ -36,7 +36,7 @@ export class PersonCreateComponent {
   }
 
   async back() {
-    await this.router.navigate(['persons']);
+    await this.router.navigate(['people']);
   }
 
   async save(formData: any) {
