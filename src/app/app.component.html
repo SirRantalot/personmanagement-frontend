@@ -14,16 +14,24 @@
     <mat-drawer #drawer [opened]="true" class="personmanager-sidenav" mode="side">
       <div>
         <div>
-          <button (click)="navigateTo('about')" color="primary" mat-button>
-            <mat-icon>help</mat-icon>About Page</button>
+          <button (click)="navigateTo('dashboard')" color="primary" mat-button>
+            <mat-icon>dashboard</mat-icon>Dashboard</button>
         </div>
         <div>
-          <button (click)="navigateTo('example')" color="primary" mat-button>
-            <mat-icon>code</mat-icon>Example Page</button>
+          <button (click)="navigateTo('people')" color="primary" mat-button>
+            <mat-icon>person</mat-icon>People</button>
         </div>
         <div>
-          <button (click)="navigateTo('persons')" color="primary" mat-button>
-            <mat-icon>person</mat-icon>Persons</button>
+          <button (click)="navigateTo('contactdetails')" color="primary" mat-button>
+            <mat-icon>mail</mat-icon>ContactDetails</button>
+        </div>
+        <div>
+          <button (click)="navigateTo('countries')" color="primary" mat-button>
+            <mat-icon>flag</mat-icon>Countries</button>
+        </div>
+        <div>
+          <button (click)="navigateTo('cities')" color="primary" mat-button>
+            <mat-icon>house</mat-icon>Cities</button>
         </div>
         <div>
           <button (click)="login()" color="warn" mat-button>Login</button>
