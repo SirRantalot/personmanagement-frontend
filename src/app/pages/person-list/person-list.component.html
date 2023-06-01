@@ -31,8 +31,20 @@
             <td *matCellDef="let element" mat-cell> {{element.firstname}} </td>
         </ng-container>
         <ng-container matColumnDef="name">
-            <th *matHeaderCellDef mat-header-cell>Name</th>
+            <th *matHeaderCellDef mat-header-cell>Surname</th>
             <td *matCellDef="let element" mat-cell> {{element.name}} </td>
+        </ng-container>
+        <ng-container matColumnDef="age">
+            <th *matHeaderCellDef mat-header-cell>Age</th>
+            <td *matCellDef="let element" mat-cell> {{element.age}} </td>
+        </ng-container>
+        <ng-container matColumnDef="contactDetails">
+            <th *matHeaderCellDef mat-header-cell>Contact Details</th>
+            <td *matCellDef="let element" mat-cell> {{element.contactDetails}} </td>
+        </ng-container>
+        <ng-container matColumnDef="nationality">
+            <th *matHeaderCellDef mat-header-cell>Nationality</th>
+            <td *matCellDef="let element" mat-cell> {{element.nationality.nationality}} </td>
         </ng-container>
         <tr *matHeaderRowDef="columns" mat-header-row></tr>
         <tr *matRowDef="let row; columns: columns;" mat-row></tr>

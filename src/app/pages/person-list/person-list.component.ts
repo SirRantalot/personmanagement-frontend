@@ -18,7 +18,7 @@ export class PersonListComponent {
   personsDataSource = new MatTableDataSource<Person>();
   @ViewChild(MatPaginator) paginator?: MatPaginator;
 
-  columns = ['id', 'firstname', 'name', 'actions'];
+  columns = ['id', 'firstname', 'name', 'age', 'contactDetails', 'nationality', 'actions'];
 
   public constructor(private personService: PersonService, private dialog: MatDialog,
                      private router: Router, private snackBar: MatSnackBar) {
