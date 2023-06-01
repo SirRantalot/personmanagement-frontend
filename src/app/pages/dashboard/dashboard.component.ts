@@ -16,12 +16,12 @@ export class DashboardComponent {
     this.headerService.setPage('nav.dashboard');
   }
 
-  /*ngOnInit(): void {
+  ngOnInit(): void {
     this.authService.usernameObservable.subscribe(name => {
       this.username = name;
     });
     this.authService.useraliasObservable.subscribe(alias => {
       this.useralias = alias;
     });
-  }*/
+  }
 }

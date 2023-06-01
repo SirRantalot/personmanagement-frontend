@@ -10,8 +10,8 @@
   </div>
 
 
-  <mat-drawer-container class="demoapp-container">
-    <mat-drawer #drawer [opened]="true" class="demoapp-sidenav" mode="side">
+  <mat-drawer-container class="personmanager-container">
+    <mat-drawer #drawer [opened]="true" class="personmanager-sidenav" mode="side">
       <div>
         <div>
           <button (click)="navigateTo('about')" color="primary" mat-button>
@@ -34,7 +34,7 @@
       </div>
     </mat-drawer>
 
-    <div class="demoapp-sidenav-content">
+    <div class="personmanager-sidenav-content">
       <router-outlet></router-outlet>
     </div>
 

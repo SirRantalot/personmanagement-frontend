@@ -1,1 +1,9 @@
-<p>dashboard works!</p>
+<div *ngIf="useralias !== ''" style="font-weight: bold">
+
+  {{ 'welcome ' + username}}
+
+  <!--div [innerHTML]="'dashboard.welcome' | translate: {username: username, useralias: useralias}"></div-->
+</div>
+<div *ngIf="!useralias || useralias === ''">
+  <app-login></app-login>
+</div>
