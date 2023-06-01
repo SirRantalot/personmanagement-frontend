@@ -1,10 +1,43 @@
-<div>
-  <button (click)="login()" color="warn" mat-button>Login</button>
-</div>
-<div>
-  <button (click)="logout()" color="warn" mat-button>Logout</button>
+<div style="height: 100%; overflow: hidden">
+  <div style="vertical-align: middle">
+    <button (click)="drawer.toggle()" color="primary" mat-icon-button type="button">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span style="font-weight: bold; position: absolute; height: 48px; line-height: 48px;">
+      {{ currentPage }}
+    </span>
+
+  </div>
+
+
+  <mat-drawer-container class="demoapp-container">
+    <mat-drawer #drawer [opened]="true" class="demoapp-sidenav" mode="side">
+      <div>
+        <div>
+          <button (click)="navigateTo('about')" color="primary" mat-button>
+            <mat-icon>help</mat-icon>About Page</button>
+        </div>
+        <div>
+          <button (click)="navigateTo('example')" color="primary" mat-button>
+            <mat-icon>code</mat-icon>Example Page</button>
+        </div>
+        <div>
+          <button (click)="navigateTo('persons')" color="primary" mat-button>
+            <mat-icon>person</mat-icon>Persons</button>
+        </div>
+        <div>
+          <button (click)="login()" color="warn" mat-button>Login</button>
+        </div>
+        <div>
+          <button (click)="logout()" color="warn" mat-button>Logout</button>
+        </div>
+      </div>
+    </mat-drawer>
+
+    <div class="demoapp-sidenav-content">
+      <router-outlet></router-outlet>
+    </div>
+
+  </mat-drawer-container>
 </div>
 
-<div class="demoapp-sidenav-content">
-  <router-outlet></router-outlet>
-</div>
