@@ -1,1 +1,64 @@
-<p>contact-details-list works!</p>
+<h1>Countries</h1>
+<div>
+    <mat-toolbar color="primary">
+      <span>
+        <button (click)="add()" color="primary" mat-button style="color: white">
+          <mat-icon>add</mat-icon>
+            Add new Contact-Details
+        </button>
+      </span>
+    </mat-toolbar>
+</div>
+<div>
+    <table [dataSource]="contactDetailsDataSource" class="mat-elevation-z8 departments-table" mat-table>
+        <ng-container matColumnDef="actions">
+            <th *matHeaderCellDef class="w-75 th-center" mat-header-cell></th>
+            <td *matCellDef="let element" mat-cell style="text-align: end">
+                <button (click)="edit(element)" color="primary" mat-button>
+                    <mat-icon>edit</mat-icon>
+                </button>
+                <button (click)="delete(element)" color="warn" mat-button>
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </td>
+        </ng-container>
+        <ng-container matColumnDef="id">
+            <th *matHeaderCellDef mat-header-cell>Id</th>
+            <td *matCellDef="let element" mat-cell> {{element.id}} </td>
+        </ng-container>
+        <ng-container matColumnDef="street">
+          <th *matHeaderCellDef mat-header-cell>Street</th>
+          <td *matCellDef="let element" mat-cell> {{element.street}} </td>
+        </ng-container>
+        <ng-container matColumnDef="streetNumber">
+          <th *matHeaderCellDef mat-header-cell>Street Number</th>
+          <td *matCellDef="let element" mat-cell> {{element.streetNumber}} </td>
+        </ng-container>
+        <ng-container matColumnDef="email">
+            <th *matHeaderCellDef mat-header-cell>Email</th>
+            <td *matCellDef="let element" mat-cell> {{element.email}} </td>
+        </ng-container>
+        <ng-container matColumnDef="postalNumber">
+            <th *matHeaderCellDef mat-header-cell>Postal Number</th>
+            <td *matCellDef="let element" mat-cell> {{element.postalNumber}} </td>
+        </ng-container>
+        <ng-container matColumnDef="phoneNumber">
+            <th *matHeaderCellDef mat-header-cell>Phone Number</th>
+            <td *matCellDef="let element" mat-cell> {{element.phoneNumber}} </td>
+        </ng-container>
+        <ng-container matColumnDef="city">
+            <th *matHeaderCellDef mat-header-cell>City</th>
+            <td *matCellDef="let element" mat-cell> {{element.city.city}} </td>
+        </ng-container>
+        <ng-container matColumnDef="country">
+            <th *matHeaderCellDef mat-header-cell>Country</th>
+            <td *matCellDef="let element" mat-cell> {{element.country.country}} </td>
+        </ng-container>
+        <tr *matHeaderRowDef="columns" mat-header-row></tr>
+        <tr *matRowDef="let row; columns: columns;" mat-row></tr>
+    </table>
+    <mat-paginator [pageSizeOptions]="[5, 10]" [pageSize]="10"
+                   showFirstLastButtons>
+    </mat-paginator>
+</div>
+

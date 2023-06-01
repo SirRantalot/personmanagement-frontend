@@ -36,7 +36,7 @@ export class CountryCreateComponent {
   }
 
   async back() {
-    await this.router.navigate(['countries']);
+    await this.router.navigate(['cities']);
   }
 
   async save(formData: any) {
