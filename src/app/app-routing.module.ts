@@ -15,25 +15,25 @@ import { CityCreateComponent } from './pages/city-create/city-create.component';
 const routes: Routes = [
   {path: '', component: DashboardComponent},
   {path: 'dashboard', component: DashboardComponent},
-  {path: 'people', component: PersonListComponent, canActivate: [AppAuthGuard], data: {roles: [AppRoles.User]}},
+  {path: 'people', component: PersonListComponent, canActivate: [AppAuthGuard], data: {roles: [AppRoles.Viewer]}},
   {
     path: 'person', canActivate: [AppAuthGuard], component: PersonCreateComponent, pathMatch: 'full',
-    data: {roles: [AppRoles.Admin]}
+    data: {roles: [AppRoles.User]}
   },
   {
     path: 'person/:id', canActivate: [AppAuthGuard], component: PersonCreateComponent, pathMatch: 'full',
-    data: {roles: [AppRoles.Admin]}
+    data: {roles: [AppRoles.User]}
   },
-  {path: 'contactdetailsList', component: ContactDetailsListComponent, canActivate: [AppAuthGuard], data: {roles: [AppRoles.User]}},
+  {path: 'contactdetailsList', component: ContactDetailsListComponent, canActivate: [AppAuthGuard], data: {roles: [AppRoles.Viewer]}},
   {
     path: 'contactdetails', canActivate: [AppAuthGuard], component: ContactDetailsCreateComponent, pathMatch: 'full',
-    data: {roles: [AppRoles.Admin]}
+    data: {roles: [AppRoles.User]}
   },
   {
     path: 'contactdetails/:id', canActivate: [AppAuthGuard], component: ContactDetailsCreateComponent, pathMatch: 'full',
-    data: {roles: [AppRoles.Admin]}
+    data: {roles: [AppRoles.User]}
   },
-  {path: 'countries', component: CountryListComponent, canActivate: [AppAuthGuard], data: {roles: [AppRoles.User]}},
+  {path: 'countries', component: CountryListComponent, canActivate: [AppAuthGuard], data: {roles: [AppRoles.Viewer]}},
   {
     path: 'country', canActivate: [AppAuthGuard], component: CountryCreateComponent, pathMatch: 'full',
     data: {roles: [AppRoles.Admin]}
@@ -42,7 +42,7 @@ const routes: Routes = [
     path: 'country/:id', canActivate: [AppAuthGuard], component: CountryCreateComponent, pathMatch: 'full',
     data: {roles: [AppRoles.Admin]}
   },
-  {path: 'cities', component: CityListComponent, canActivate: [AppAuthGuard], data: {roles: [AppRoles.User]}},
+  {path: 'cities', component: CityListComponent, canActivate: [AppAuthGuard], data: {roles: [AppRoles.Viewer]}},
   {
     path: 'city', canActivate: [AppAuthGuard], component: CityCreateComponent, pathMatch: 'full',
     data: {roles: [AppRoles.Admin]}
