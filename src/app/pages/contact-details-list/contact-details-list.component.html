@@ -14,12 +14,12 @@
         <ng-container matColumnDef="actions">
             <th *matHeaderCellDef class="w-75 th-center" mat-header-cell></th>
             <td *matCellDef="let element" mat-cell style="text-align: end">
-                <button (click)="edit(element)" color="primary" mat-button>
-                    <mat-icon>edit</mat-icon>
-                </button>
-                <button (click)="delete(element)" color="warn" mat-button>
-                    <mat-icon>delete</mat-icon>
-                </button>
+              <button (click)="edit(element)" *appIsInRole="'user'" color="primary" mat-button>
+                <mat-icon>edit</mat-icon>
+              </button>
+              <button (click)="delete(element)" *appIsInRole="'user'" color="warn" mat-button>
+                <mat-icon>delete</mat-icon>
+              </button>
             </td>
         </ng-container>
         <ng-container matColumnDef="id">
