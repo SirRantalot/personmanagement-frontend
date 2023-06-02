@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -13,7 +13,7 @@ import { CityService } from 'src/app/service/city.service';
   templateUrl: './city-list.component.html',
   styleUrls: ['./city-list.component.scss']
 })
-export class CityListComponent {
+export class CityListComponent implements OnInit, AfterViewInit {
 
   citysDataSource = new MatTableDataSource<City>();
   @ViewChild(MatPaginator) paginator?: MatPaginator;

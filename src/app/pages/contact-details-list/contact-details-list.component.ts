@@ -1,9 +1,10 @@
-import { Component, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
+import { BaseComponent } from 'src/app/components/base/base.component';
 import { ConfirmDialogComponent } from 'src/app/components/confirm-dialog/confirm-dialog.component';
 import { ContactDetails } from 'src/app/dataaccess/contact-details';
 import { ContactDetailsService } from 'src/app/service/contact-details.service';
@@ -13,7 +14,7 @@ import { ContactDetailsService } from 'src/app/service/contact-details.service';
   templateUrl: './contact-details-list.component.html',
   styleUrls: ['./contact-details-list.component.scss']
 })
-export class ContactDetailsListComponent {
+export class ContactDetailsListComponent extends BaseComponent implements OnInit, AfterViewInit {
 
   contactDetailsDataSource = new MatTableDataSource<ContactDetails>();
   @ViewChild(MatPaginator) paginator?: MatPaginator;
@@ -22,6 +23,7 @@ export class ContactDetailsListComponent {
 
   public constructor(private contactDetailsService: ContactDetailsService, private dialog: MatDialog,
                      private router: Router, private snackBar: MatSnackBar) {
+    super();
   }
 
   async ngOnInit() {

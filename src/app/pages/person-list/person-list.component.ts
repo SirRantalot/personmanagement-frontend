@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -13,7 +13,7 @@ import { PersonService } from 'src/app/service/person.service';
   templateUrl: './person-list.component.html',
   styleUrls: ['./person-list.component.scss']
 })
-export class PersonListComponent {
+export class PersonListComponent implements OnInit, AfterViewInit {
 
   personsDataSource = new MatTableDataSource<Person>();
   @ViewChild(MatPaginator) paginator?: MatPaginator;
