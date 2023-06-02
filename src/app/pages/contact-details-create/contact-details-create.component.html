@@ -20,7 +20,7 @@
           <mat-form-field>
               <mat-label>Street Number</mat-label>
               <input #inputStreetNumber formControlName="streetNumber" matInput maxlength="100">
-              <mat-hint align="end">{{inputStreetNumber.value.length || 0}}/100</mat-hint>
+              <mat-hint align="end">{{inputStreetNumber.value.length || 0}}/10</mat-hint>
           </mat-form-field>
           <mat-form-field>
               <mat-label>Email</mat-label>
@@ -35,7 +35,7 @@
           <mat-form-field>
             <mat-label>Phone Number</mat-label>
             <input #inputPhoneNumber formControlName="phoneNumber" matInput maxlength="10" required>
-            <mat-hint align="end">{{inputPhoneNumber.value.length || 0}}/10</mat-hint>
+            <mat-hint align="end">{{inputPhoneNumber.value.length || 0}}/14</mat-hint>
           </mat-form-field>
           <mat-form-field>
             <mat-label>City</mat-label>

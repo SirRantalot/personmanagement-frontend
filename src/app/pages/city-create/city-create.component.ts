@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { UntypedFormGroup, UntypedFormControl, UntypedFormBuilder } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -10,7 +10,7 @@ import { CityService } from 'src/app/service/city.service';
   templateUrl: './city-create.component.html',
   styleUrls: ['./city-create.component.scss']
 })
-export class CityCreateComponent {
+export class CityCreateComponent implements OnInit {
 
   city = new City();
   public objForm = new UntypedFormGroup({
