@@ -14,8 +14,7 @@ export class CityCreateComponent {
 
   city = new City();
   public objForm = new UntypedFormGroup({
-    firstname: new UntypedFormControl(''),
-    name: new UntypedFormControl('')
+    city: new UntypedFormControl('')
   });
 
   constructor(private router: Router, private route: ActivatedRoute,

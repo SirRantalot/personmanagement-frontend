@@ -14,8 +14,8 @@ export class CountryCreateComponent {
 
   country = new Country();
   public objForm = new UntypedFormGroup({
-    firstname: new UntypedFormControl(''),
-    name: new UntypedFormControl('')
+    country: new UntypedFormControl(''),
+    nationality: new UntypedFormControl('')
   });
 
   constructor(private router: Router, private route: ActivatedRoute,
