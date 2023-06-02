@@ -24,7 +24,7 @@ const routes: Routes = [
     path: 'person/:id', canActivate: [AppAuthGuard], component: PersonCreateComponent, pathMatch: 'full',
     data: {roles: [AppRoles.Admin]}
   },
-  {path: 'contactdetails', component: ContactDetailsListComponent, canActivate: [AppAuthGuard], data: {roles: [AppRoles.User]}},
+  {path: 'contactdetailsList', component: ContactDetailsListComponent, canActivate: [AppAuthGuard], data: {roles: [AppRoles.User]}},
   {
     path: 'contactdetails', canActivate: [AppAuthGuard], component: ContactDetailsCreateComponent, pathMatch: 'full',
     data: {roles: [AppRoles.Admin]}

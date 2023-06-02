@@ -14,8 +14,13 @@ export class ContactDetailsCreateComponent {
 
   contactDetails = new ContactDetails();
   public objForm = new UntypedFormGroup({
-    firstname: new UntypedFormControl(''),
-    name: new UntypedFormControl('')
+      street: new UntypedFormControl(''),
+      streetNumber: new UntypedFormControl(''),
+      email: new UntypedFormControl(''),
+      postalNumber: new UntypedFormControl(''),
+      phoneNumber: new UntypedFormControl(''),
+      city: new UntypedFormControl(''),
+      country: new UntypedFormControl('')
   });
 
   constructor(private router: Router, private route: ActivatedRoute,
@@ -36,7 +41,7 @@ export class ContactDetailsCreateComponent {
   }
 
   async back() {
-    await this.router.navigate(['contactdetails']);
+    await this.router.navigate(['contactdetailsList']);
   }
 
   async save(formData: any) {

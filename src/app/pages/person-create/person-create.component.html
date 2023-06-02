@@ -22,6 +22,21 @@
               <input #inputName formControlName="name" matInput maxlength="100" required>
               <mat-hint align="end">{{inputName.value.length || 0}}/100</mat-hint>
           </mat-form-field>
+          <mat-form-field>
+              <mat-label>Age</mat-label>
+              <input #inputAge formControlName="age" matInput maxlength="3" required>
+              <mat-hint align="end">{{inputAge.value.length || 0}}/3</mat-hint>
+          </mat-form-field>
+          <mat-form-field>
+              <mat-label>Contact Details Id</mat-label>
+              <input #inputContactDetails formControlName="contactDetailsId" matInput maxlength="10" required>
+              <mat-hint align="end">{{inputContactDetails.value.length || 0}}/100</mat-hint>
+          </mat-form-field>
+          <mat-form-field>
+              <mat-label>Nationality</mat-label>
+              <input #inputNationality formControlName="nationality" matInput maxlength="100" required>
+              <mat-hint align="end">{{inputNationality.value.length || 0}}/100</mat-hint>
+          </mat-form-field>
           <button [disabled]="!objForm.valid" color="primary" mat-raised-button style="width: 200px">
               Save
           </button>
