@@ -1,6 +1,10 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { CityListComponent } from './city-list.component';
+import {CityListComponent} from './city-list.component';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 describe('CityListComponent', () => {
   let component: CityListComponent;
@@ -8,10 +12,18 @@ describe('CityListComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CityListComponent ]
+      imports: [
+        HttpClientModule,
+        BrowserAnimationsModule,
+        MatDialogModule,
+        MatSnackBarModule
+      ],
+      declarations: [CityListComponent]
     })
-    .compileComponents();
+      .compileComponents();
+  });
 
+  beforeEach(() => {
     fixture = TestBed.createComponent(CityListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
